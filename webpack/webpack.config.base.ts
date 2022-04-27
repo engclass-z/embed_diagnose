@@ -2,8 +2,9 @@ import path from 'path';
 
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { Configuration, WebpackOptionsNormalized } from 'webpack';
+import TerserPlugin from 'terser-webpack-plugin';
 
-const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 
 const config: Configuration | Pick<WebpackOptionsNormalized, 'devServer'> = {
   mode: 'development',
@@ -39,11 +40,18 @@ const config: Configuration | Pick<WebpackOptionsNormalized, 'devServer'> = {
     port: 9876,
   },
   plugins: [
-    new FixStyleOnlyEntriesPlugin(),
+    new RemoveEmptyScriptsPlugin(),
     new MiniCssExtractPlugin({
       filename: './[name]',
     }),
   ],
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        extractComments: false,
+      }),
+    ],
+  },
 };
 
 export default config;

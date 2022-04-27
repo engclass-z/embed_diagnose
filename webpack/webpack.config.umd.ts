@@ -1,6 +1,5 @@
 import path from 'path';
 
-import TerserPlugin from 'terser-webpack-plugin';
 import { Configuration, WebpackOptionsNormalized } from 'webpack';
 
 import base from './webpack.config.base';
@@ -18,13 +17,6 @@ const config: Configuration | Pick<WebpackOptionsNormalized, 'devServer'> = {
     library: 'EmbedDiagnose',
     libraryTarget: 'umd',
     libraryExport: 'default',
-  },
-  optimization: {
-    minimizer: [
-      new TerserPlugin({
-        extractComments: false,
-      }),
-    ],
   },
 };
 

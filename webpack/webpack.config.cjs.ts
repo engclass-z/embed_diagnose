@@ -7,6 +7,7 @@ import base from './webpack.config.base';
 
 const config: Configuration | Pick<WebpackOptionsNormalized, 'devServer'> = {
   ...base,
+  mode: 'production',
   output: {
     path: path.resolve(__dirname, '../dist/cjs'),
     filename: '[name].js',

@@ -39,15 +39,16 @@ export const AppComponent: FC<Props> = ({ param }) => {
   );
 
   return (
-    <div className={classNames(CLASS_NAMES.root)}>
+    <div className={classNames(CLASS_NAMES.root, param.customClassNames?.root)}>
       {current && isQuestion(current) ? (
         <QuestionComponent
           question={current}
           goToNextQuestion={goToNextQuestion}
           goToResult={goToResult}
+          param={param}
         />
       ) : current ? (
-        <ResultComponent result={current} templates={param.resultTemplates} />
+        <ResultComponent result={current} templates={param.resultTemplates} param={param} />
       ) : null}
     </div>
   );

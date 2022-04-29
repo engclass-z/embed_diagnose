@@ -37,7 +37,9 @@ export type Param = {
   };
   customClassNames?: Partial<{
     root: string;
+    questionTitle: string;
     buttonBlock: string;
     button: string;
+    resultBlock: string;
   }>;
 };

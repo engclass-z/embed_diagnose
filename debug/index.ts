@@ -217,5 +217,8 @@ EmbedDiagnose({
     config: {
       firstQuestionId: '1',
     },
+    customClassNames: {
+      root: 'custom_root_class',
+    },
   },
 });

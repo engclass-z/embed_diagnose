@@ -1,0 +1,86 @@
+{
+  "name": "embed_diagnose",
+  "version": "1.0.0",
+  "description": "A diagnostic maker widget that can be embedded in some websites.",
+  "author": "iroha project",
+  "license": "MIT",
+  "main": "dist/esm/index.js",
+  "types": "dist/esm/src/index.d.ts",
+  "scripts": {
+    "debug": "webpack serve --config webpack/webpack.config.debug.ts",
+    "build": "yarn clean && run-s build:*",
+    "build:umd": "webpack --config webpack/webpack.config.umd.ts",
+    "build:esm": "webpack --config webpack/webpack.config.esm.ts",
+    "build:cjs": "webpack --config webpack/webpack.config.cjs.ts",
+    "clean": "rimraf dist",
+    "lint": "run-s lint:*",
+    "lint:ts": "eslint --fix --ext ts --ext tsx",
+    "lint:prettier": "prettier --write **/*.{ts,tsx,json,md}",
+    "prepare": "husky install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://www.iroha-project.com/",
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint --fix",
+    "*.{ts,tsx,json,md}": "prettier --write"
+  },
+  "browserslist": [
+    "last 1 versions",
+    "ie >= 11",
+    "safari >= 9"
+  ],
+  "dependencies": {
+    "classnames": "^2.3.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@babel/runtime": "^7.17.9",
+    "@types/react": "^18.0.7",
+    "@types/react-dom": "^18.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.21.0",
+    "@typescript-eslint/parser": "^5.21.0",
+    "autoprefixer": "^10.4.5",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "eslint": "^8.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
+    "html-webpack-plugin": "^5.5.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.4.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "npm-run-all": "^4.1.5",
+    "path": "^0.12.7",
+    "postcss": "^8.4.12",
+    "postcss-loader": "^6.2.1",
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
+    "sass": "^1.51.0",
+    "sass-loader": "^12.6.0",
+    "terser-webpack-plugin": "^5.3.1",
+    "ts-loader": "^9.2.8",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1",
+    "webpack-remove-empty-scripts": "^0.8.0",
+    "worker-plugin": "^5.0.1"
+  },
+  "resolutions": {
+    "@types/react": "^18.0.7"
+  }
+}

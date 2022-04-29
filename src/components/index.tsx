@@ -1,18 +1,18 @@
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 
-type Param = {
-  elementId: string;
-};
+import { Param } from '../app/param';
 
-export const main = ({ elementId }: Param) => {
+import { AppComponent } from './app';
+
+export const main = ({ elementId, param }: { elementId: string; param: Param }) => {
   const container = document.getElementById(elementId);
   if (!container) return;
 
   const root = createRoot(container);
   root.render(
     <React.StrictMode>
-      <div>aaa</div>
+      <AppComponent param={param} />
     </React.StrictMode>
   );
 };

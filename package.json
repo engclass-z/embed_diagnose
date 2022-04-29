@@ -4,8 +4,8 @@
   "description": "A diagnostic maker widget that can be embedded in some websites.",
   "author": "iroha project",
   "license": "MIT",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/esm/index.js",
+  "types": "dist/esm/src/index.d.ts",
   "scripts": {
     "debug": "webpack serve --config webpack/webpack.config.debug.ts",
     "build": "yarn clean && run-s build:*",
@@ -33,6 +33,7 @@
     "safari >= 9"
   ],
   "dependencies": {
+    "classnames": "^2.3.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
@@ -76,7 +77,7 @@
     "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.8.1",
-    "webpack-fix-style-only-entries": "^0.6.1",
+    "webpack-remove-empty-scripts": "^0.8.0",
     "worker-plugin": "^5.0.1"
   },
   "resolutions": {

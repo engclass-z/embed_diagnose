@@ -6,10 +6,13 @@ import base from './webpack.config.base';
 
 const config: Configuration | Pick<WebpackOptionsNormalized, 'devServer'> = {
   ...base,
-  entry: path.resolve(__dirname, '../debug/index.ts'),
+  entry: {
+    index: path.resolve(__dirname, '../debug/index.ts'),
+    'index.css': path.resolve(__dirname, '../debug/index.scss'),
+  },
   output: {
     path: path.resolve(__dirname, '../debug'),
-    filename: 'index.js',
+    filename: '[name].js',
   },
 };
 

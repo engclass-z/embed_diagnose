@@ -1,3 +1,31 @@
-main {
-  background-color: pink;
+.embed_diagnose_root {
+  // TODO: add default style
+  border: 1px solid #000000;
+  padding: 8px;
+}
+
+.embed_diagnose_button_block {
+  // TODO: add default style
+  display: flex;
+  flex-direction: column;
+}
+
+.embed_diagnose_button {
+  // TODO: add default style
+  color: #ffffff;
+  background-color: #ff0000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  padding: 8px 0;
+  appearance: none;
+
+  & + & {
+    margin-top: 8px;
+  }
+}
+
+.embed_diagnose_result_block {
+  // TODO: add default style
 }

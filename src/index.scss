@@ -1,31 +1,45 @@
 .embed_diagnose_root {
-  // TODO: add default style
-  border: 1px solid #000000;
-  padding: 8px;
+    // TODO: add default style
+}
+
+.embed_diagnose_question_title {
+    text-align: center;
 }
 
 .embed_diagnose_button_block {
-  // TODO: add default style
-  display: flex;
-  flex-direction: column;
+    // TODO: add default style
+    display: flex;
+    flex-direction: column;
 }
 
 .embed_diagnose_button {
-  // TODO: add default style
-  color: #ffffff;
-  background-color: #ff0000;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  outline: none;
-  padding: 8px 0;
-  appearance: none;
-
-  & + & {
-    margin-top: 8px;
-  }
+    // TODO: add default style
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    border: 3px #00a0e9 solid;
+    border-radius: 28px;
+    color: #00a0e9;
+    font-size: 16px;
+    font-weight: bold;
+    background: #fff;
+    transition: all 0.3s ease;
+    &:hover {
+        color: white;
+        background-color: #00a0e9;
+    }
+    &+& {
+        margin-top: 8px;
+    }
 }
 
 .embed_diagnose_result_block {
-  // TODO: add default style
+    // TODO: add default style
+}
+
+.embed_diagnose_custom_1 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
 }
